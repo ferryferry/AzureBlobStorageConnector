@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureBlobStorageConnector", "SecureBlobStorageConnector\SecureBlobStorageConnector.csproj", "{1D66BB5F-AB44-465E-BED2-BFF16F9CAE93}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{E98189C7-D6B2-4C4B-95F9-5FE94B75BFFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleApplication", "Example\ExampleApplication\ExampleApplication.csproj", "{D21308F5-5EE0-4C25-9352-C1A1D27FA047}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,12 @@ Global
 		{1D66BB5F-AB44-465E-BED2-BFF16F9CAE93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D66BB5F-AB44-465E-BED2-BFF16F9CAE93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D66BB5F-AB44-465E-BED2-BFF16F9CAE93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D21308F5-5EE0-4C25-9352-C1A1D27FA047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D21308F5-5EE0-4C25-9352-C1A1D27FA047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D21308F5-5EE0-4C25-9352-C1A1D27FA047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D21308F5-5EE0-4C25-9352-C1A1D27FA047}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D21308F5-5EE0-4C25-9352-C1A1D27FA047} = {E98189C7-D6B2-4C4B-95F9-5FE94B75BFFA}
 	EndGlobalSection
 EndGlobal
