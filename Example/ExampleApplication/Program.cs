@@ -8,7 +8,7 @@ namespace ExampleApplication
     {
         static void Main(string[] args)
         {
-            const string connectionStringAzureStorageAccount = "DefaultEndpointsProtocol=https;AccountName=masterdatapoc;AccountKey=TM4WDE4Bfd3Dmo6JWvKXpNBAr2YEtg2iHZ5EKYBvAedTp9Z3GgTxwGNbVybK7+q4BNMGSkrCX+Vm48pUhUlEwg==;EndpointSuffix=core.windows.net";
+            const string connectionStringAzureStorageAccount = "YOUR-CONNECTIONSTRING-HERE";
             var secureBlobStorageConnector = new SecureBlobStorageConnector.SecureBlobStorageConnector(connectionStringAzureStorageAccount);
             
             // Upload blob:
