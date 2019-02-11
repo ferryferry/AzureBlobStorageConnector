@@ -37,23 +37,39 @@ namespace SecureBlobStorage.Function
 
         private static async Task<IActionResult> HandlePOST(HttpRequest req, ILogger log)
         {
-            var file = req.Body;
             var secureBlobStorageConnector = new SecureBlobStorageConnector.SecureBlobStorageConnector(_connectionString);
 
+            try
+            {
+                if (req.Body.Length <= 0)
+                {
+                    return new BadRequestObjectResult("Provided file is empty!");
+                }
+            }
+            catch (NotSupportedException)
+            {
+                return new BadRequestObjectResult("No file provided, or provided file is empty!");
+            }
+
             var contentType = req.Headers["content-type"];
-            if (contentType == string.Empty)
+            if (string.IsNullOrEmpty(contentType))
             {
                 return new BadRequestObjectResult("No content type provided in headers.");
             }
 
             var mime = new Mime();
+            if (mime.Extension(contentType).Count == 0)
+            {
+                return new BadRequestObjectResult($"Specified content type {contentType} invalid!");
+            }
+
             var extension = mime.Extension(contentType)[0];
             var fileName = $"{Guid.NewGuid().ToString()}.{extension}";
             var containerName = req.Query["containerName"];
-            
+
             await secureBlobStorageConnector.UploadAsync(fileName, req.Query["containerName"], req.Body);
 
-            
+
             return new CreatedResult(fileName, null);
         }
 
